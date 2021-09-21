@@ -13,12 +13,70 @@ body {
     align-items: center;
     justify-content: center;
 }
-
-
-
+/* container  */
 .container {
-    border: 1px solid black;
     height: 90%;
-    max-width: 80%;
+    max-width: 90%;
     background-color: white;
+    display: flex;
 }
+.column-left {
+    flex-basis: 35%;
+}
+.column-right {
+    flex-basis: 65%;
+}
+.column-left, .column-right {
+    border: 1px solid black;
+}
+/* column-left */
+.header-column-left {
+    background-color: #eaeaea;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px 10px 10px;
+}
+.header-column-left img {
+    width: 33px;
+    border-radius: 50%;
+    border: 1px solid black;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.header-column-left h4{
+    display: inline-block;
+    vertical-align: middle;
+}
+.header-column-left .settings i  {
+    color: #b1b1b1;
+    margin-left: 10px;
+}
+.notifications {
+    padding: 10px;
+    background-color: #8edafc;
+}
+.notifications-right {
+    display: inline-block;
+    vertical-align: middle;
+}
+.notifications i {
+    vertical-align: middle;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+    background-color: white;
+    color: #8edafc;
+}
+.title {
+    font-weight: bold;
+}
+.sub-title {
+    font-size: 12px;
+    text-decoration: underline;
+    color: gray;
+}
+/* column-right */
+
+
