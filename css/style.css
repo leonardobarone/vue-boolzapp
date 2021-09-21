@@ -147,7 +147,21 @@ body {
 }
 .container-messages {
     background-image: url("../img/mine.jpg");
-    /* height: calc(100% - navbar superiore e inferiore); */
+    overflow-y: auto;
+    height: calc(100% - 125px);
 }
-
-
+.input-message {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    background-color: #eaeaea;
+}
+.input-message input {
+    width: 80%;
+    padding: 10px 5px;
+    border-style: none;
+}
+.input-message {
+    color: gray;
+}
