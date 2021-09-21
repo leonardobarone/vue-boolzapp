@@ -43,14 +43,31 @@
                     </button>
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
-                <div class="contacts" v-for="contact in contacts">
-                    <img :src=" 'img/avatar' + contact.avatar + '.jpg' " alt="">
-                    <h4>{{contact.name}}</h4>
+                <div class="container-contacts">
+                    <div class="contacts" v-for="contact in contacts">
+                        <img :src=" 'img/avatar' + contact.avatar + '.jpg' " alt="">
+                        <h4>{{contact.name}}</h4>
+                    </div>
+                    <div class="contacts" v-for="contact in contacts">
+                        <img :src=" 'img/avatar' + contact.avatar + '.jpg' " alt="">
+                        <h4>{{contact.name}}</h4>
+                    </div>
                 </div>
             </div>
             <!-- right -->
             <div class="column-right">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sequi nemo porro veritatis earum consectetur exercitationem nostrum necessitatibus natus ad optio, illo tempore, neque quo ipsam enim quae at nisi. Eos?
+                <div class="header-column-right">
+                    <div class="account">
+                        <img src="img/avatar_1.jpg" alt="">
+                        <div class="name-account">
+                            <h4>Michele</h4>
+                            <p>Ultimo accesso oggi alle</p>
+                        </div>
+                    </div>
+                    <div class="settings">
+                        AòAòAòA
+                    </div>
+                </div>
             </div>
         </div>
         <!-- vue -->
