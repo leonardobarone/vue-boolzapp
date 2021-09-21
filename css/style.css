@@ -4,3 +4,21 @@
     margin: 0px;
     padding: 0px;
 }
+/* font */
+body {
+    font-family: 'Lato', sans-serif;
+    height: 100vh;
+    background: linear-gradient(to top,#d7dbd6 80%,#009688 20%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.container {
+    border: 1px solid black;
+    height: 90%;
+    max-width: 80%;
+    background-color: white;
+}
