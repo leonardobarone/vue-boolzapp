@@ -26,8 +26,11 @@ body {
 .column-right {
     flex-basis: 65%;
 }
-.column-left, .column-right {
-    border: 1px solid black;
+.column-right {
+    border-left: 1px solid gray;
+}
+.container {
+    border: 1px solid gray;
 }
 /* column-left */
 .header-column-left {
@@ -76,6 +79,29 @@ body {
     font-size: 12px;
     text-decoration: underline;
     color: gray;
+}
+.search {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+}
+.button-search {
+    margin-right: 0px;
+    cursor: pointer;
+}
+.search input, .button-search {
+    padding: 5px;
+    border-style: none;
+    border: 1px solid lightgray;
+    background-color: white;
+}
+.search input {
+    width: 100%;
+}
+.search {
+    width: calc(100% - 10px);
+    padding: 5px;
+   
 }
 /* column-right */
 
