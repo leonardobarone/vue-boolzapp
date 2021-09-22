@@ -4,6 +4,7 @@ const app = new Vue({
     el: "#root",
     data: {
         item: 0,
+        message: "",
         contacts: [
             {
                 name: 'Michele',
@@ -90,6 +91,14 @@ const app = new Vue({
     methods: {
         cambiaChat(index) {
             this.item = index;
+        },
+        invia() {
+            this.contacts[this.item].messages.push({
+                date: '28/03/2020 16:15:22',
+                message: this.message,
+                status: 'sent'
+            })
+            this.message = "";
         }
     }
 })

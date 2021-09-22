@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="container-messages">
-                    <div class="message" :class="message.status == 'sent' ? 'my-message' : 'null'" v-for="(message, index) in contacts[item].messages">
+                    <div class="message" :class="message.status == 'sent' ? 'my-message' : 'null'" v-for="(message, index) in contacts[item].messages" :key="index">
                         <div class="text">
                            {{message.message}}
                         </div>
@@ -80,7 +80,7 @@
                 </div>
                 <div class="input-message">
                     <i class="far fa-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input v-on:keyup.enter="invia()" v-model="message" type="text" placeholder="Scrivi un messaggio">
                     <i class="fas fa-microphone"></i>
                 </div>
             </div>
