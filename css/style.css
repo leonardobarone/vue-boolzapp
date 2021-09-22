@@ -150,6 +150,8 @@ body {
     overflow-y: auto;
     height: calc(100% - 7.8125rem);
     padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
 }
 .input-message {
     display: flex;
@@ -169,21 +171,21 @@ body {
 .message {
     background-color: white;
     display: inline-block;
-    padding: 10px;
-    border-radius: 10px;
-    width: 80%;
-    margin-bottom: 15px ;
+    padding: .625rem;
+    border-radius: .625rem;
+    margin-bottom: .9375rem;
+    align-self: flex-start;
 }
 .time {
-    font-size: 10px;
+    font-size: .625rem;
     text-align: right;
-    margin-top: 10px;
+    margin-top: .625rem;
 }
 .text {
     font-weight: bold;
-    padding-right: 40px;
+    padding-right: 50px;
 }
 .message.my-message{
-    margin-left: 20%;
     background-color: #d5f9ba;
+    align-self: flex-end;
 }
