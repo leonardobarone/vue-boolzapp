@@ -93,30 +93,37 @@ const app = new Vue({
             this.item = index;
         },
 
-        // getData() {
-
-        // },
+        getData() {
+            let today = new Date();
+            let date = today.getFullYear()+'/'+(today.getMonth()+01)+'/'+today.getDate()+' '
+            let time = today.getHours() + ":" + today.getMinutes() + ":" + 
+            today.getSeconds();
+            let dateTime = date+' '+time;
+            return dateTime;
+        },
 
         invia() {
 
-            // let dataGiorno = getData();
+            let dataGiorno = this.getData();
             
 
             if (this.message != "") {
                 this.contacts[this.item].messages.push({
-                    date: '28/03/2020 16:15:22',
+                    date: dataGiorno,
                     message: this.message,
                     status: 'sent'
                 })
+                
+                setTimeout (() => {
+                    (this.contacts[this.item].messages.push({
+                        date: '28/03/2020 16:15:22',
+                        message: "It's okay!",
+                        status: 'received'
+                    }))
+                }, 5000);
+            
             }
            
-            setTimeout (() => {
-                (this.contacts[this.item].messages.push({
-                    date: '28/03/2020 16:15:22',
-                    message: "Maledetta Primavera",
-                    status: 'received'
-                }))
-            }, 5000);
 
             this.message = ""
         },
