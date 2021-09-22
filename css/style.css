@@ -114,6 +114,9 @@ body {
     padding: .625rem;
     border-bottom: .0625rem solid lightgray;
 }
+.contacts.active {
+    background-color: #e9ebeb;
+}
 .contacts img {
     width: 3.125rem;
     border-radius: 50%;

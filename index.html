@@ -46,7 +46,7 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div class="container-contacts">
-                    <div class="contacts" v-for="(contact, index) in contacts" :key="index">
+                    <div class="contacts" :class="index == 0 ? 'active' : 'null'" v-for="(contact, index) in contacts" :key="index">
                         <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                         <h4>{{contact.name}}</h4>
                     </div>
@@ -69,28 +69,12 @@
                     </div>
                 </div>
                 <div class="container-messages">
-                    <div class="message">
+                    <div class="message" :class="message.status == 'sent' ? 'my-message' : 'null'" v-for="(message, index) in contacts[0].messages">
                         <div class="text">
-                            Lorem 
+                           {{message.message}}
                         </div>
                         <div class="time">
-                            10/01/2020 15:30:55
-                        </div>
-                    </div>
-                    <div class="message my-message">
-                        <div class="text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet rerum id, ea, aliquam temporibus tempora, nostrum iste nam harum quisquam delectus molestiae illum aut accusantium dignissimos ratione vel esse enim.
-                        </div>
-                        <div class="time">
-                            10/01/2020 15:30:55
-                        </div>
-                    </div>
-                    <div class="message">
-                        <div class="text">
-                            Lorem ipsum
-                        </div>
-                        <div class="time">
-                            10/01/2020 15:30:55
+                            {{message.date}}
                         </div>
                     </div>
                 </div>
