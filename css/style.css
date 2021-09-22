@@ -16,7 +16,7 @@ body {
 /* container  */
 .container {
     height: 90%;
-    min-width: 90%;
+    width: 90%;
     background-color: white;
     display: flex;
 }
@@ -167,6 +167,7 @@ body {
     color: gray;
 }
 .time {
+    color: grey;
     text-align: right;
     font-size: 12px;
     margin-top: 10px;
