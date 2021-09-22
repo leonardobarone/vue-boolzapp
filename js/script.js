@@ -96,18 +96,23 @@ const app = new Vue({
 
             if (this.message != "") {
                 this.contacts[this.item].messages.push({
-                    date: dayjs.utc(),
+                    date: '28/03/2020 16:15:22',
                     message: this.message,
                     status: 'sent'
                 })
-                this.contacts[this.item].messages.push({
+            }
+           
+            setTimeout (() => {
+                (this.contacts[this.item].messages.push({
                     date: '28/03/2020 16:15:22',
                     message: "ok",
                     status: 'received'
-                })
-            }
-            this.message = "";
-        } 
+                }))
+            }, 1000);
+
+            this.message = ""
+        },
+        
     }
 })
 
