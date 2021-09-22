@@ -114,6 +114,10 @@ body {
     padding: .625rem;
     border-bottom: .0625rem solid lightgray;
 }
+.contacts:first-child {
+    border-top: .0625rem solid lightgray;
+}
+
 .contacts.active {
     background-color: #e9ebeb;
 }
@@ -186,7 +190,7 @@ body {
 }
 .text {
     font-weight: bold;
-    padding-right: 50px;
+    padding-right: 3.125rem;
 }
 .message.my-message{
     background-color: #d5f9ba;

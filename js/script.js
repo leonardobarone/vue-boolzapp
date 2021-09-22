@@ -3,6 +3,7 @@
 const app = new Vue({
     el: "#root",
     data: {
+        item: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -87,7 +88,9 @@ const app = new Vue({
         ]
     },
     methods: {
-        
+        cambiaChat(index) {
+            this.item = index;
+        }
     }
 })
 
