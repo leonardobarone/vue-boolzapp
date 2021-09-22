@@ -149,6 +149,7 @@ body {
     background-image: url("../img/mine.jpg");
     overflow-y: auto;
     height: calc(100% - 125px);
+    padding: 40px;
 }
 .input-message {
     display: flex;
@@ -164,4 +165,33 @@ body {
 }
 .input-message {
     color: gray;
+}
+.time {
+    text-align: right;
+    font-size: 12px;
+    margin-top: 10px;
+}
+.message {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px 0px;
+}
+.white {
+    background-color: white;
+}
+.green {
+    background-color: #d5f9ba;
+    text-align: left;
+}
+
+.message-right {
+    text-align: right;
+}
+.content {
+    font-weight: bold;
+}
+.message-left .content,
+.message-right .content {
+    padding-right: 50px;
 }
