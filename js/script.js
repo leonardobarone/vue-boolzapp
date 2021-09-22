@@ -93,13 +93,21 @@ const app = new Vue({
             this.item = index;
         },
         invia() {
-            this.contacts[this.item].messages.push({
-                date: '28/03/2020 16:15:22',
-                message: this.message,
-                status: 'sent'
-            })
+
+            if (this.message != "") {
+                this.contacts[this.item].messages.push({
+                    date: dayjs.utc(),
+                    message: this.message,
+                    status: 'sent'
+                })
+                this.contacts[this.item].messages.push({
+                    date: '28/03/2020 16:15:22',
+                    message: "ok",
+                    status: 'received'
+                })
+            }
             this.message = "";
-        }
+        } 
     }
 })
 
