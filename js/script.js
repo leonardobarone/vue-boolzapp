@@ -92,7 +92,15 @@ const app = new Vue({
         cambiaChat(index) {
             this.item = index;
         },
+
+        // getData() {
+
+        // },
+
         invia() {
+
+            // let dataGiorno = getData();
+            
 
             if (this.message != "") {
                 this.contacts[this.item].messages.push({
@@ -105,10 +113,10 @@ const app = new Vue({
             setTimeout (() => {
                 (this.contacts[this.item].messages.push({
                     date: '28/03/2020 16:15:22',
-                    message: "ok",
+                    message: "Maledetta Primavera",
                     status: 'received'
                 }))
-            }, 1000);
+            }, 5000);
 
             this.message = ""
         },
