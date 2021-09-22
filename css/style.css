@@ -1,8 +1,8 @@
 /* reset */
 * {
     box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
+    margin: 0rem;
+    padding: 0rem;
 }
 /* font */
 body {
@@ -16,7 +16,7 @@ body {
 /* container  */
 .container {
     height: 90%;
-    width: 90%;
+    width: 80%;
     background-color: white;
     display: flex;
 }
@@ -29,10 +29,10 @@ body {
     height: 100%;
 }
 .column-right {
-    border-left: 1px solid gray;
+    border-left: .0625rem solid gray;
 }
 .container {
-    border: 1px solid gray;
+    border: .0625rem solid gray;
 }
 /* column-left */
 .header-column-left {
@@ -40,12 +40,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 15px 10px 10px;
+    padding: .625rem .9375rem .625rem .625rem;
 }
 .header-column-left img {
-    width: 50px;
+    width: 3.125rem;
     border-radius: 50%;
-    margin-right: 5px;
+    margin-right: .3125rem;
     vertical-align: middle;
 }
 .header-column-left h4{
@@ -54,10 +54,10 @@ body {
 }
 .header-column-left .settings i  {
     color: #b1b1b1;
-    margin-left: 10px;
+    margin-left: .625rem;
 }
 .notifications {
-    padding: 15px;
+    padding: .9375rem;
     background-color: #8edafc;
 }
 .notifications-right {
@@ -66,10 +66,10 @@ body {
 }
 .notifications i {
     vertical-align: middle;
-    font-size: 20px;
-    padding: 10px;
+    font-size: 1.25rem;
+    padding: .625rem;
     border-radius: 50%;
-    margin-right: 5px;
+    margin-right: .3125rem;
     background-color: white;
     color: #8edafc;
 }
@@ -77,7 +77,7 @@ body {
     font-weight: bold;
 }
 .sub-title {
-    font-size: 12px;
+    font-size: .75rem;
     text-decoration: underline;
     color: gray;
 }
@@ -86,13 +86,13 @@ body {
     align-items: center;
 }
 .button-search {
-    margin-right: 0px;
+    margin-right: 0rem;
     cursor: pointer;
 }
 .search input, .button-search {
-    padding: 5px 15px;
+    padding: .3125rem .9375rem;
     border-style: none;
-    border: 1px solid lightgray;
+    border: .0625rem solid lightgray;
     background-color: white;
     color: #b1b1b1;
 }
@@ -101,98 +101,89 @@ body {
 }
 .search {
     width: 100%;
-    padding: 5px;  
+    padding: .3125rem;  
     background-color: #eaeaea;
 }
 .container-contacts {
-    height: calc(100% - 177px);
+    height: calc(100% - 11.0625rem);
     overflow-y: auto;
 }
 .contacts {
     display: flex;
     align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid lightgray;
+    padding: .625rem;
+    border-bottom: .0625rem solid lightgray;
 }
 .contacts img {
-    width: 50px;
+    width: 3.125rem;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: .625rem;
 }
 /* column-right */
 .header-column-right {
     background-color: #eaeaea;
-    padding: 10px 15px 10px 10px;
+    padding: .625rem .9375rem .625rem .625rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
 }
 .header-column-right .account img {
-    width: 50px;
+    width: 3.125rem;
     border-radius: 50%;
-    margin-right: 10px;
+    margin-right: .625rem;
 }
 .header-column-right .account {
     display: flex;
     align-items: center;
 }
 .header-column-right .name-account p {
-    font-size: 12px;
-    margin-top: 2px;
+    font-size: .75rem;
+    margin-top: .125rem;
 }
 .header-column-right .settings i {
     color: #b1b1b1;
-    margin-left: 10px;
+    margin-left: .625rem;
 }
 .container-messages {
     background-image: url("../img/mine.jpg");
     overflow-y: auto;
-    height: calc(100% - 125px);
-    padding: 40px;
+    height: calc(100% - 7.8125rem);
+    padding: 2.5rem;
 }
 .input-message {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 10px;
+    padding: .625rem;
     background-color: #eaeaea;
 }
 .input-message input {
     width: 80%;
-    padding: 10px 5px;
+    padding: .625rem .3125rem;
     border-style: none;
 }
 .input-message {
     color: gray;
 }
-.time {
-    color: grey;
-    text-align: right;
-    font-size: 12px;
-    margin-top: 10px;
-}
 .message {
+    background-color: white;
     display: inline-block;
     padding: 10px;
     border-radius: 10px;
-    margin: 10px 0px;
+    width: 80%;
+    margin-bottom: 15px ;
 }
-.white {
-    background-color: white;
-}
-.green {
-    background-color: #d5f9ba;
-    text-align: left;
-}
-
-.message-right {
+.time {
+    font-size: 10px;
     text-align: right;
+    margin-top: 10px;
 }
-.content {
+.text {
     font-weight: bold;
+    padding-right: 40px;
 }
-.message-left .content,
-.message-right .content {
-    padding-right: 50px;
+.message.my-message{
+    margin-left: 20%;
+    background-color: #d5f9ba;
 }

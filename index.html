@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- favicon -->
+        <link rel="shortcut icon" href="img/whatsapp.png" type="image/x-icon">
         <!-- awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- font -->
@@ -44,12 +46,8 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div class="container-contacts">
-                    <div class="contacts" v-for="contact in contacts">
-                        <img :src=" 'img/avatar' + contact.avatar + '.jpg' " alt="">
-                        <h4>{{contact.name}}</h4>
-                    </div>
-                    <div class="contacts" v-for="contact in contacts">
-                        <img :src=" 'img/avatar' + contact.avatar + '.jpg' " alt="">
+                    <div class="contacts" v-for="(contact, index) in contacts" :key="index">
+                        <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
                         <h4>{{contact.name}}</h4>
                     </div>
                 </div>
@@ -71,81 +69,20 @@
                     </div>
                 </div>
                 <div class="container-messages">
-                    <div class="message-left">
-                        <div class="message white">
-                            <div class="content">
-                                ciao leo!
-                            </div>
-                            <div class="time">
-                                17:14
-                            </div>
+                    <div class="message my-message">
+                        <div class="text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quam pariatur quisquam 
+                        </div>
+                        <div class="time">
+                            10/01/2020 15:30:55
                         </div>
                     </div>
-                    <div class="message-right">
-                        <div class="message green">
-                            <div class="content">ciao frat'm! tt appost?</div>
-                            <div class="time">14.29</div>
+                    <div class="message ">
+                        <div class="text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis quam pariatur quisquam 
                         </div>
-                    </div>
-                    <div class="message-right">
-                        <div class="message green">
-                            <div class="content">ciao frat'm! tt appost?</div>
-                            <div class="time">14.29</div>
-                        </div>
-                    </div>
-                    <div class="message-left">
-                        <div class="message white">
-                            <div class="content">
-                                ciao leo!
-                            </div>
-                            <div class="time">
-                                17:14
-                            </div>
-                        </div>
-                    </div><div class="message-left">
-                        <div class="message white">
-                            <div class="content">
-                                ciao leo!
-                            </div>
-                            <div class="time">
-                                17:14
-                            </div>
-                        </div>
-                    </div><div class="message-left">
-                        <div class="message white">
-                            <div class="content">
-                                ciao leo!
-                            </div>
-                            <div class="time">
-                                17:14
-                            </div>
-                        </div>
-                    </div><div class="message-left">
-                        <div class="message white">
-                            <div class="content">
-                                ciao leo!
-                            </div>
-                            <div class="time">
-                                17:14
-                            </div>
-                        </div>
-                    </div><div class="message-left">
-                        <div class="message white">
-                            <div class="content">
-                                ..
-                            </div>
-                            <div class="time">
-                                17:14
-                            </div>
-                        </div>
-                    </div><div class="message-left">
-                        <div class="message white">
-                            <div class="content">
-                                ciao leo!
-                            </div>
-                            <div class="time">
-                                17:14
-                            </div>
+                        <div class="time">
+                            10/01/2020 15:30:55
                         </div>
                     </div>
                 </div>
