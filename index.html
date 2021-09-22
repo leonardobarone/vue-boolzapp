@@ -56,9 +56,9 @@
             <div class="column-right">
                 <div class="header-column-right">
                     <div class="account">
-                        <img src="img/avatar_1.jpg" alt="">
+                        <img :src="`img/avatar${contacts[item].avatar}.jpg`" alt="">
                         <div class="name-account">
-                            <h4>Michele</h4>
+                            <h4>{{contacts[item].name}}</h4>
                             <p>Ultimo accesso oggi alle</p>
                         </div>
                     </div>
