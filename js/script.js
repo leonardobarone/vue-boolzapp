@@ -125,14 +125,14 @@ const app = new Vue({
                 }, 5000);
             
             }
-           
-
-            this.message = ""
+                this.message = ""
         },
-        
+    
     }
 })
 
 /* if (this.contacts[this.item].name == this.search) { 
         mostrami quel contact nel v-for
 } */
+
+// visible true sono tutti 

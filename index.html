@@ -43,31 +43,26 @@
                 <button class="button-search">
                     <i class="fas fa-search"></i>
                 </button>
-                <input v-model="search" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input v-model="search" type="text" placeholder="Cerca o inizia una nuova chat">
             </div>
             <div class="container-contacts">
-                <!-- inside if -->
-                <div class="contacts" 
-                @click="cambiaChat(index)" 
-                :class="index == item ? 'active' : 'null'" 
-                v-for="(contact, index) in contacts" 
-                :key="index">
-                    <img 
-                    :src="'img/avatar' + contact.avatar + '.jpg'" 
-                    :alt="contact.name">
-                    <h4>{{contact.name}}</h4>
-                </div>
-                <!-- /inside if -->
-                <div class="contacts" 
-                @click="cambiaChat(index)" 
-                :class="index == item ? 'active' : 'null'" 
-                v-for="(contact, index) in contacts" 
-                :key="index">
-                    <img 
-                    :src="'img/avatar' + contact.avatar + '.jpg'" 
-                    :alt="contact.name">
-                    <h4>{{contact.name}}</h4>
-                </div>
+              
+                    
+                        <div class="contacts" 
+                    @click="cambiaChat(index)" 
+                    :class="index == item ? 'active' : 'null'" 
+                    v-for="(contact, index) in contacts" 
+                    :key="index">
+                        <img 
+                        :src="'img/avatar' + contact.avatar + '.jpg'" 
+                        :alt="contact.name">
+                        <h4>{{contact.name}}</h4>
+                    </div>
+                  
+                
+               
+                
+
             </div>
         </div>
         <!-- right -->
