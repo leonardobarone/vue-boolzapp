@@ -6,6 +6,7 @@ const app = new Vue({
         item: 0,
         message: "",
         search: "",
+        prova: true,
         contacts: [
             {
                 name: 'Michele',
@@ -95,11 +96,7 @@ const app = new Vue({
         },
 
         getData() {
-            let today = new Date();
-            let date = today.getFullYear()+'/'+(today.getMonth()+01)+'/'+today.getDate()+' '
-            let time = today.getHours() + ":" + today.getMinutes() + ":" + 
-            today.getSeconds();
-            let dateTime = date+' '+time;
+            let dateTime = dayjs().format('DD/MM/YYYY HH:mm:ss')
             return dateTime;
         },
 
@@ -127,7 +124,13 @@ const app = new Vue({
             }
                 this.message = ""
         },
-    
+        
+        cancella(index) {
+
+          this.contacts[this.item].messages.splice(index, 1) 
+           
+
+        }
     }
 })
 

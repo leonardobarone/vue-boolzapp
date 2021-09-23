@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div class="container-messages">
-                <div class="message" :class="message.status == 'sent' ? 'my-message' : 'null'" v-for="(message, index) in contacts[item].messages" :key="index">
+                <div class="message" @click="cancella(index)" :class="message.status == 'sent' ? 'my-message' : 'null'" v-for="(message, index) in contacts[item].messages" :key="index">
                     <div class="text">
                         {{message.message}}
                     </div>
@@ -100,6 +100,9 @@
             </div>
         </div>
     </div>
+    <!-- CDN example (unpkg) -->
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <script>dayjs().format()</script>
     <!-- vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <!-- script -->
