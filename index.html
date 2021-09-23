@@ -51,14 +51,16 @@
                         <div class="contacts" 
                     @click="cambiaChat(index)" 
                     :class="index == item ? 'active' : 'null'" 
-                    v-for="(contact, index) in contacts" 
+                    v-for="(contact, index) in contacts"
+                    v-if="contact.name.toLowerCase().includes(search.toLowerCase())" 
                     :key="index">
                         <img 
                         :src="'img/avatar' + contact.avatar + '.jpg'" 
                         :alt="contact.name">
                         <h4>{{contact.name}}</h4>
                     </div>
-                  
+                                  <!-- v-show="contact.name.toLowerCase().includes(search.toLowerCase())" -->
+
                 
                
                 
