@@ -1,93 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- favicon -->
-        <link rel="shortcut icon" href="img/whatsapp.png" type="image/x-icon">
-        <!-- awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- font -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-        <!-- css -->
-        <link rel="stylesheet" href="css/style.css">
-        <title>Vue Boolzapp</title>
-    </head>
-    <body>
-        <!-- container -->
-        <div id="root" class="container">
-            <!-- left -->
-            <div class="column-left">
-                <div class="header-column-left">
-                    <div class="account">
-                        <img src="img/avatar_io.jpg" alt="">
-                        <h4>Nome Utente</h4>
-                    </div>
-                    <div class="settings">
-                        <i class="fas fa-circle-notch"></i>
-                        <i class="fas fa-comment-alt"></i>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/whatsapp.png" type="image/x-icon">
+    <!-- awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Vue Boolzapp</title>
+</head>
+<body>
+    <!-- container -->
+    <div id="root" class="container">
+        <!-- left -->
+        <div class="column-left">
+            <div class="header-column-left">
+                <div class="account">
+                    <img src="img/avatar_io.jpg" alt="">
+                    <h4>Nome Utente</h4>
                 </div>
-                <div class="notifications">
-                    <i class="fas fa-bell-slash"></i>
-                    <div class="notifications-right">
-                        <div class="title">Ricevi notifiche di nuovi messaggi</div>
-                        <div class="sub-title">Attiva notifiche desktop</div>
-                    </div>
-                </div>
-                <div class="search">
-                    <button class="button-search">
-                        <i class="fas fa-search"></i>
-                    </button>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
-                </div>
-                <div class="container-contacts">
-                    <div @click="cambiaChat(index)" class="contacts" :class="index == item ? 'active' : 'null'" v-for="(contact, index) in contacts" :key="index">
-                        <img :src="'img/avatar' + contact.avatar + '.jpg'" :alt="contact.name">
-                        <h4>{{contact.name}}</h4>
-                    </div>
+                <div class="settings">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
                 </div>
             </div>
-            <!-- right -->
-            <div class="column-right">
-                <div class="header-column-right">
-                    <div class="account">
-                        <img :src="`img/avatar${contacts[item].avatar}.jpg`" alt="">
-                        <div class="name-account">
-                            <h4>{{contacts[item].name}}</h4>
-                            <p>Ultimo accesso oggi alle</p>
-                        </div>
-                    </div>
-                    <div class="settings">
-                        <i class="fas fa-search"></i>
-                        <i class="fas fa-paperclip"></i>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
+            <div class="notifications">
+                <i class="fas fa-bell-slash"></i>
+                <div class="notifications-right">
+                    <div class="title">Ricevi notifiche di nuovi messaggi</div>
+                    <div class="sub-title">Attiva notifiche desktop</div>
                 </div>
-                <div class="container-messages">
-                    <div class="message" :class="message.status == 'sent' ? 'my-message' : 'null'" v-for="(message, index) in contacts[item].messages" :key="index">
-                        <div class="text">
-                           {{message.message}}
-                        </div>
-                        <div class="time">
-                            {{message.date}}
-                        </div>
-                    </div>
+            </div>
+            <div class="search">
+                <button class="button-search">
+                    <i class="fas fa-search"></i>
+                </button>
+                <input v-model="search" type="text" placeholder="Cerca o inizia una nuova chat">
+            </div>
+            <div class="container-contacts">
+                <!-- inside if -->
+                <div class="contacts" 
+                @click="cambiaChat(index)" 
+                :class="index == item ? 'active' : 'null'" 
+                v-for="(contact, index) in contacts" 
+                :key="index">
+                    <img 
+                    :src="'img/avatar' + contact.avatar + '.jpg'" 
+                    :alt="contact.name">
+                    <h4>{{contact.name}}</h4>
                 </div>
-                <div class="input-message">
-                    <i class="far fa-smile"></i>
-                    <input v-on:keyup.enter="invia()" v-model="message" type="text" placeholder="Scrivi un messaggio">
-                    <i class="fas fa-microphone"></i>
+                <!-- /inside if -->
+                <div class="contacts" 
+                @click="cambiaChat(index)" 
+                :class="index == item ? 'active' : 'null'" 
+                v-for="(contact, index) in contacts" 
+                :key="index">
+                    <img 
+                    :src="'img/avatar' + contact.avatar + '.jpg'" 
+                    :alt="contact.name">
+                    <h4>{{contact.name}}</h4>
                 </div>
             </div>
         </div>
-        <!-- vue -->
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
-        <!-- script -->
-        <script src="js/script.js"></script>
-    </body>
+        <!-- right -->
+        <div class="column-right">
+            <div class="header-column-right">
+                <div class="account">
+                    <img :src="`img/avatar${contacts[item].avatar}.jpg`" alt="">
+                    <div class="name-account">
+                        <h4>{{contacts[item].name}}</h4>
+                        <p>Ultimo accesso oggi alle</p>
+                    </div>
+                </div>
+                <div class="settings">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
+            <div class="container-messages">
+                <div class="message" :class="message.status == 'sent' ? 'my-message' : 'null'" v-for="(message, index) in contacts[item].messages" :key="index">
+                    <div class="text">
+                        {{message.message}}
+                    </div>
+                    <div class="time">
+                        {{message.date}}
+                    </div>
+                </div>
+            </div>
+            <div class="input-message">
+                <i class="far fa-smile"></i>
+                <input v-on:keyup.enter="invia()" v-model="message" type="text" placeholder="Scrivi un messaggio">
+                <i class="fas fa-microphone"></i>
+            </div>
+        </div>
+    </div>
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <!-- script -->
+    <script src="js/script.js"></script>
+</body>
 </html>

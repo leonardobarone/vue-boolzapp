@@ -5,6 +5,7 @@ const app = new Vue({
     data: {
         item: 0,
         message: "",
+        search: "",
         contacts: [
             {
                 name: 'Michele',
@@ -115,8 +116,9 @@ const app = new Vue({
                 })
                 
                 setTimeout (() => {
+                    dataGiorno = this.getData();
                     (this.contacts[this.item].messages.push({
-                        date: '28/03/2020 16:15:22',
+                        date: dataGiorno,
                         message: "It's okay!",
                         status: 'received'
                     }))
@@ -131,8 +133,6 @@ const app = new Vue({
     }
 })
 
-// Milestone 1
-
-// 1. Replica della grafica con la possibilità di avere messaggi scritti dall'utente (verdi) e dall'interlocutore (bianco) assegnando due classi CSS diverse.
-
-// 2. Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto. 
+/* if (this.contacts[this.item].name == this.search) { 
+        mostrami quel contact nel v-for
+} */

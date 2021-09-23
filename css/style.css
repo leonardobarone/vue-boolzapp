@@ -99,6 +99,9 @@ body {
 .search input {
     width: 100%;
 }
+.search input:focus {
+    color: black;
+}
 .search {
     width: 100%;
     padding: .3125rem;  
